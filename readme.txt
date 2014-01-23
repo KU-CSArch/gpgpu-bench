@@ -10,7 +10,8 @@
  - a benchmark bundle in gppgu-sim
  - copy ispass2009-benchmark to gpgpu-bench
  - rename ispass2009-benchmark to ispass2009
- - in the ispass2009 folder, run Makefile.ispass-2009 (ex: make -f Makefile.ispass-2009)
+ - in the ispass2009 folder, run Makefile.ispass-2009
+   + make -f Makefile.ispass-2009
  - some benchmarks aren't compiled
    + AES, DG, DG/3rdParty in hahoe.usc.edu
    + DG in everest.usc.edu
