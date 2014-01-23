@@ -14,7 +14,7 @@
    + make -f Makefile.ispass-2009
  - some benchmarks aren't compiled
    + AES, DG, DG/3rdParty in hahoe.usc.edu
-   + DG in everest.usc.edu
+   + DG, DG/3rdParty in everest.usc.edu
  - binary files will be generated in ./bin/
 
 2. rodinia_2.4
