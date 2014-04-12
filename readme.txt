@@ -30,3 +30,14 @@
    + cfd, srad_v2, mummergpu in hahoe.usc.edu
    + cfd, lavaMD, srad_v2, mummergpu in everest.usc.edu
  - bindary files will be generated in ./bin/
+
+3. SDK
+ - get NVDIA CUDA SDK
+   + wget http://developer.download.nvidia.com/compute/cuda/4_2/rel/sdk/gpucomputingsdk_4.2.9_linux.run
+ - run downloaded SDK files to ~/bin/NVIDIA_GPU_Computing_SDK4
+   + chmod 755 *.run
+   + gpucomputingsdk_4.2.9_linux.run
+ - compile benchmarks
+   + cd ~/bin/NVIDIA_GPU_Computing_SDK4/C
+   + make
+ - binary files will be generated in ./bin/linux/cuda/release
