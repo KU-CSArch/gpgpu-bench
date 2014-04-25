@@ -41,3 +41,23 @@
    + cd ~/bin/NVIDIA_GPU_Computing_SDK4/C
    + make
  - binary files will be generated in ./bin/linux/cuda/release
+
+4. parboil
+ - get parboil benchmark suites
+   + from http://impact.crhc.illinois.edu/Parboil/parboil_download_page.aspx
+ - extract the compressed driver file
+   + tar -xvzf pb2.5driver.tgz
+ - move benchmarks and data into the prboil folder and extract them
+   + mv *.tgz ./parboil/.
+   + cd parboil
+   + tar -xvzf pb2.5benchmarks.tgz
+   + tar -xvzf pb2.5datasets_standard.tgz
+ - change permissions
+   + chmod u+x ./parboil
+   + chmod u+x benchmarks/*/tools/compare-output
+ - copy example makefile.conf and set CUDA environment
+   + cp Makefile.conf.example-nvidia Makefile.conf
+ - set CUDA path in ./common/mk and ./common/platform
+ - compile benchmarks in parboil root path. you can find benchmarks list
+   + ./parboil list
+   + ./parboil compile bfs cuda
