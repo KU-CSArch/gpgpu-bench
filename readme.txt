@@ -76,3 +76,6 @@
    + cp -r Mars/sample_apps ~/bin/NVIDIA_GPU_Computing_SDK4/C
  - change SDK path and output path in run.sh
  - ./run.sh make all
+ - make bin folder in Mars. make symbolic links for binary files 
+   + cp ~/bin/NVIDIA_GPU_Computing_SDK4/C/bin/linux/release/InvertedIndex/InvertedIndex .
+   + ln -s ~/bin/NVIDIA_GPU_Computing_SDK4/C/bin/linux/release/InvertedIndex/InvertedIndex InvertedIndex
