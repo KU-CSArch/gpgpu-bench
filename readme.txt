@@ -79,3 +79,26 @@
  - make bin folder in Mars. make symbolic links for binary files 
    + cp ~/bin/NVIDIA_GPU_Computing_SDK4/C/bin/linux/release/InvertedIndex/InvertedIndex .
    + ln -s ~/bin/NVIDIA_GPU_Computing_SDK4/C/bin/linux/release/InvertedIndex/InvertedIndex InvertedIndex
+
+6. PolyBench-AAC
+ - get PolyBench-AAC in Github
+   + git clone https://github.com/cavazos-lab/PolyBench-ACC.git
+ - Set up PATH and LD_LIBRARY_PATH environment variables to point to CUDA installation
+ - Run make in target folder(s) with codes to generate executable(s)
+ - Delete .git directory in the PolyBench-AAC directory
+
+7. FinanceBench
+ - get FinanceBench in Github
+   + git clone https://github.com/cavazos-lab/FinanceBench.git
+ - Set the PATH and LD_LIBRARY_PATH environment variables to point to the appropriate locations for CUDA/OpenCL.
+ - Navigate to CUDA/OpenCL folder in target application.
+ - Run Makefile (by using "make" command).
+ - Delete .git directory in the FinanceBench directory
+
+8. SHOC benchmark suite
+ - get SOHC benchmark suite in Github
+   + git clone https://github.com/vetter/shoc.git
+ - Compiling with scripts
+   + configure
+   + make
+   + make install
