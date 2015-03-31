@@ -34,6 +34,8 @@
    + cfd in hahoe.usc.edu
    + cfd, lavaMD, hybridsort in everest.usc.edu
  - bindary files will be generated in ./bin/
+ - need to compile manually some benchmarks such as b+tree and myocyte
+ - copy generated binary files in ./bin/linux/cuda/
 
 3. SDK
  - get NVDIA CUDA SDK (recommend 4.0)
