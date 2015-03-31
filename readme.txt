@@ -19,11 +19,11 @@
    + DG, DG/3rdParty in everest.usc.edu
  - binary files will be generated in ./bin/
 
-2. rodinia_2.4
- - get rodinia benchmark suites (287M)
-   + wget http://www.cs.virginia.edu/~kw5na/lava/Rodinia/Packages/Current/rodinia_2.4.tar.bz2
+2. rodinia_3.0
+ - get rodinia benchmark suites (293M)
+   + wget http://www.cs.virginia.edu/~kw5na/lava/Rodinia/Packages/Current/rodinia_3.0.tar.bz2
  - extract compressed file
-   + tar -xvjf rodinia_2.4.tar.bz2
+   + tar -xvjf rodinia_3.0.tar.bz2
  - set NVIDIA SDK path in ./common/make.config
    + SDK_DIR = ~/bin/NVIDIA_GPU_Computing_SDK4/C
  - (optional) set CUDA binary path in ./common/make.config
@@ -31,8 +31,8 @@
  - compile benchmarks
    + make CUDA
  - some benchmarks aren't compiled
-   + cfd, srad_v2, mummergpu in hahoe.usc.edu
-   + cfd, lavaMD, srad_v2, mummergpu in everest.usc.edu
+   + cfd in hahoe.usc.edu
+   + cfd, lavaMD, hybridsort in everest.usc.edu
  - bindary files will be generated in ./bin/
 
 3. SDK
@@ -102,3 +102,22 @@
    + configure
    + make
    + make install
+
+-----------------------------------------------------------------------
+* Old versions
+
+2. rodinia_2.4
+ - get rodinia benchmark suites (287M)
+   + wget http://www.cs.virginia.edu/~kw5na/lava/Rodinia/Packages/Current/rodinia_2.4.tar.bz2
+ - extract compressed file
+   + tar -xvjf rodinia_2.4.tar.bz2
+ - set NVIDIA SDK path in ./common/make.config
+   + SDK_DIR = ~/bin/NVIDIA_GPU_Computing_SDK4/C
+ - (optional) set CUDA binary path in ./common/make.config
+   + CUDA_DIR = `which nvcc`
+ - compile benchmarks
+   + make CUDA
+ - some benchmarks aren't compiled
+   + cfd, srad_v2, mummergpu in hahoe.usc.edu
+   + cfd, lavaMD, srad_v2, mummergpu in everest.usc.edu
+ - bindary files will be generated in ./bin/
