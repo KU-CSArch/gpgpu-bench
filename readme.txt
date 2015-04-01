@@ -31,6 +31,7 @@
  - compile benchmarks
    + make CUDA
  - some benchmarks aren't compiled
+   + For dwt2D, incorrect path (../../data/dwt2D/) should be removed in main.cu
    + cfd in hahoe.usc.edu
    + cfd, lavaMD, hybridsort in everest.usc.edu
  - bindary files will be generated in ./bin/
