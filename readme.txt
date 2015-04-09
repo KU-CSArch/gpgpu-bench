@@ -8,7 +8,7 @@
 
 1. ispass2009
  - a benchmark bundle in gppgu-sim
-   + git clone git://dev.ece.ubc.ca/gpgpu-sim 
+   + git clone https://github.com/gpgpu-sim/ispass2009-benchmarks.git
  - copy ispass2009-benchmark to gpgpu-bench
    + cp -r gpgpu-sim/ispass2009-benchmark ispass2009
  - rename ispass2009-benchmark to ispass2009
