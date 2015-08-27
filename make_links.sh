@@ -8,7 +8,7 @@ if [ -f common ]; then
 	ln -s ~/bin/NVIDIA_GPU_Computing_SDK4/C/common common
 fi
 
-if [ -f sdkr ]; then
+if [ -f sdk4 ]; then
 	ln -s ~/bin/NVIDIA_GPU_Computing_SDK4/C sdk4
 fi
 
