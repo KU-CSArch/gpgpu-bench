@@ -8,12 +8,12 @@
 
 1. ispass2009
  - a benchmark bundle in gppgu-sim
-   + git clone https://github.com/gpgpu-sim/ispass2009-benchmarks.git
+   git clone https://github.com/gpgpu-sim/ispass2009-benchmarks.git
  - copy ispass2009-benchmark to gpgpu-bench
-   + cp -r gpgpu-sim/ispass2009-benchmark ispass2009
+   cp -r gpgpu-sim/ispass2009-benchmark ispass2009
  - rename ispass2009-benchmark to ispass2009
  - in the ispass2009 folder, run Makefile.ispass-2009
-   + make -f Makefile.ispass-2009
+   make -f Makefile.ispass-2009
  - some benchmarks aren't compiled
    + AES, DG, DG/3rdParty in hahoe.usc.edu
    + DG, DG/3rdParty in everest.usc.edu
@@ -21,15 +21,18 @@
 
 2. rodinia_3.0
  - get rodinia benchmark suites (293M)
-   + wget http://www.cs.virginia.edu/~kw5na/lava/Rodinia/Packages/Current/rodinia_3.0.tar.bz2
+   wget http://www.cs.virginia.edu/~kw5na/lava/Rodinia/Packages/Current/rodinia_3.0.tar.bz2
  - extract compressed file
-   + tar -xvjf rodinia_3.0.tar.bz2
+   tar -xvjf rodinia_3.0.tar.bz2
  - set NVIDIA SDK path in ./common/make.config
    + SDK_DIR = ~/bin/NVIDIA_GPU_Computing_SDK4/C
  - (optional) set CUDA binary path in ./common/make.config
    + CUDA_DIR = `which nvcc`
+ - Modify Makefile to compile additional benchmarks, add following lines
+   cd cuda/b+tree;	make;	cp b+tree.out $(CUDA_BIN_DIR)/b+tree
+   cd cuda/myocyte;	make;	cp myocyte.out $(CUDA_BIN_DIR)/myocyte 
  - compile benchmarks
-   + make CUDA
+   make CUDA
  - some benchmarks aren't compiled
    + For dwt2D, incorrect path (../../data/dwt2D/) should be removed in main.cu
    + cfd in hahoe.usc.edu
@@ -40,59 +43,74 @@
 
 3. SDK
  - get NVDIA CUDA SDK (recommend 4.0)
-   + wget http://developer.download.nvidia.com/compute/cuda/4_0/sdk/gpucomputingsdk_4.0.17_linux.run
-   + wget http://developer.download.nvidia.com/compute/cuda/4_2/rel/sdk/gpucomputingsdk_4.2.9_linux.run
+   wget http://developer.download.nvidia.com/compute/cuda/4_0/sdk/gpucomputingsdk_4.0.17_linux.run
+   wget http://developer.download.nvidia.com/compute/cuda/4_2/rel/sdk/gpucomputingsdk_4.2.9_linux.run
  - run downloaded SDK files to ~/bin/NVIDIA_GPU_Computing_SDK4
-   + chmod 755 *.run
-   + gpucomputingsdk_4.2.9_linux.run
+   chmod 755 *.run
+   gpucomputingsdk_4.2.9_linux.run
+ - failed to compile some benchmarks. Copy these folders in src_failed
+   cd ~/bin/NVIDIA_GPU_Computing_SDK4/C
+   mkdir src_failed
+   mv src/bicubicTexture src_failed/. 
+   mv src/bilateralFilter src_failed/. 
+   mv src/boxFilter src_failed/. 
+   mv src/fluidsGL src_failed/. 
+   mv src/FunctionPointers src_failed/. 
+   mv src/list src_failed/. 
+   mv src/Mandelbrot src_failed/. 
+   mv src/recursiveGaussian src_failed/. 
+   mv src/simpleTexture3D src_failed/. 
+   mv src/SobelFilter src_failed/. 
+   mv src/volumeFiltering src_failed/. 
+   mv src/volumeRender src_failed/.
  - compile benchmarks
-   + cd ~/bin/NVIDIA_GPU_Computing_SDK4/C
-   + make
+   cd ~/bin/NVIDIA_GPU_Computing_SDK4/C
+   make
  - binary files will be generated in ./bin/linux/cuda/release
 
 4. parboil
  - get parboil benchmark suites
    + from http://impact.crhc.illinois.edu/Parboil/parboil_download_page.aspx
  - extract the compressed driver file
-   + tar -xvzf pb2.5driver.tgz
+   tar -xvzf pb2.5driver.tgz
  - move benchmarks and data into the prboil folder and extract them
-   + mv *.tgz ./parboil/.
-   + cd parboil
-   + tar -xvzf pb2.5benchmarks.tgz
-   + tar -xvzf pb2.5datasets_standard.tgz
+   mv *.tgz ./parboil/.
+   cd parboil
+   tar -xvzf pb2.5benchmarks.tgz
+   tar -xvzf pb2.5datasets_standard.tgz
  - change permissions
-   + chmod u+x ./parboil
-   + chmod u+x benchmarks/*/tools/compare-output
+   chmod u+x ./parboil
+   chmod u+x benchmarks/*/tools/compare-output
  - copy example makefile.conf and set CUDA environment
-   + cp Makefile.conf.example-nvidia Makefile.conf
+   cp Makefile.conf.example-nvidia Makefile.conf
  - set CUDA path in ./common/mk and ./common/platform
  - compile benchmarks in parboil root path. you can find benchmarks list
-   + ./parboil list
-   + ./parboil compile bfs cuda
+   ./parboil list
+   ./parboil compile bfs cuda
 
 5. Mars
  - get mars benchmark suite
-   + wget http://www.cse.ust.hk/catalac/users/wenbin/mars/Mars.zip
+   wget http://www.cse.ust.hk/catalac/users/wenbin/mars/Mars.zip
  - extract compressed file
-   + unzip Mars.zip
+   unzip Mars.zip
  - copy sameple_apps in NVIDIA CUDA SDK
-   + cp -r Mars/sample_apps ~/bin/NVIDIA_GPU_Computing_SDK4/C
+   cp -r Mars/sample_apps ~/bin/NVIDIA_GPU_Computing_SDK4/C
  - change SDK path and output path in run.sh
  - ./run.sh make all
  - make bin folder in Mars. make symbolic links for binary files 
-   + cp ~/bin/NVIDIA_GPU_Computing_SDK4/C/bin/linux/release/InvertedIndex/InvertedIndex .
-   + ln -s ~/bin/NVIDIA_GPU_Computing_SDK4/C/bin/linux/release/InvertedIndex/InvertedIndex InvertedIndex
+   cp ~/bin/NVIDIA_GPU_Computing_SDK4/C/bin/linux/release/InvertedIndex/InvertedIndex .
+   ln -s ~/bin/NVIDIA_GPU_Computing_SDK4/C/bin/linux/release/InvertedIndex/InvertedIndex InvertedIndex
 
 6. PolyBench-AAC
  - get PolyBench-AAC in Github
-   + git clone https://github.com/cavazos-lab/PolyBench-ACC.git
+   git clone https://github.com/cavazos-lab/PolyBench-ACC.git
  - Set up PATH and LD_LIBRARY_PATH environment variables to point to CUDA installation
  - Run make in target folder(s) with codes to generate executable(s)
  - Delete .git directory in the PolyBench-AAC directory
 
 7. FinanceBench
  - get FinanceBench in Github
-   + git clone https://github.com/cavazos-lab/FinanceBench.git
+   git clone https://github.com/cavazos-lab/FinanceBench.git
  - Set the PATH and LD_LIBRARY_PATH environment variables to point to the appropriate locations for CUDA/OpenCL.
  - Navigate to CUDA/OpenCL folder in target application.
  - Run Makefile (by using "make" command).
@@ -100,11 +118,11 @@
 
 8. SHOC benchmark suite
  - get SOHC benchmark suite in Github
-   + git clone https://github.com/vetter/shoc.git
+   git clone https://github.com/vetter/shoc.git
  - Compiling with scripts
-   + configure
-   + make
-   + make install
+   configure
+   make
+   make install
 
 -----------------------------------------------------------------------
 * Old versions
