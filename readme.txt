@@ -56,7 +56,6 @@
    mv src/boxFilter src_failed/. 
    mv src/fluidsGL src_failed/. 
    mv src/FunctionPointers src_failed/. 
-   mv src/list src_failed/. 
    mv src/Mandelbrot src_failed/. 
    mv src/recursiveGaussian src_failed/. 
    mv src/simpleTexture3D src_failed/. 
