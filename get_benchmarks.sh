@@ -42,7 +42,7 @@ echo "**********************************************"
 echo " Rodinia"
 echo "**********************************************"
 confirm "rodinia" && \
-	wget -O rodinia.tar.bz2 http://www.cs.virginia.edu/~kw5na/lava/Rodinia/Packages/Current/rodinia_3.0.tar.bz2 && \
+	wget -O rodinia.tar.bz2 http://www.cs.virginia.edu/~kw5na/lava/Rodinia/Packages/Current/rodinia_3.1.tar.bz2 && \
 	tar -xvjf rodinia.tar.bz2
 
 echo "**********************************************"
