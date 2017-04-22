@@ -29,7 +29,7 @@ echo "**********************************************"
 echo " gcc/g++-4.4 installation"
 echo "**********************************************"
 confirm "gcc-4.4" && \
-	sudo apt-get install gcc-4.4 g++-4.4 && \
+	sudo apt-get install gcc-4.4 g++ g++-4.4 && \
 	sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.4 10 && \
 	sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-${CC_OLD_VER} 20 && \
 	sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.4 10 && \
