@@ -21,13 +21,13 @@ function confirm() {
 	esac
 }
 
-echo "**********************************************"
-echo " Make static link to common"
-echo " (CUDA SDK 4.X should be installed already!!)"
-echo " (~/bin/NVIDIA_GPU_Computing_SDK4/C/common common -> common)"
-echo "**********************************************"
-confirm "make_link" && \
-	ln -s ~/bin/NVIDIA_GPU_Computing_SDK4/C/common common
+#echo "**********************************************"
+#echo " Make static link to common"
+#echo " (CUDA SDK 4.X should be installed already!!)"
+#echo " (~/bin/NVIDIA_GPU_Computing_SDK4/C/common common -> common)"
+#echo "**********************************************"
+#confirm "make_link" && \
+#	ln -s ~/bin/NVIDIA_GPU_Computing_SDK4/C/common common
 
 echo "**********************************************"
 echo " GPGPU-Sim bundle"

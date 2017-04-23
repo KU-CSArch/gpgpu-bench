@@ -4,6 +4,7 @@
 #  Excluding benchmarks that fail compilation
 # ***************************************
 
+## Ubuntu 14.04
 LIST=""
 LIST="${LIST} deviceQueryDrv"
 LIST="${LIST} matrixMulDrv"
