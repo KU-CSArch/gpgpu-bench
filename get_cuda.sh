@@ -4,6 +4,8 @@
 # - Gunjae Koo (gunjae.koo@gmail.com)
 # *******************************************
 
+source common.config
+
 # pre-installed GCC version
 CC_OLD_VER=4.6
 
@@ -22,7 +24,7 @@ function confirm() {
 }
 
 echo "**********************************************"
-echo " "
+echo " First set common.config"
 echo "**********************************************"
 
 echo "**********************************************"
@@ -44,12 +46,24 @@ confirm "gcc-4.4" && \
 echo "**********************************************"
 echo " Install dependent libraries"
 echo "**********************************************"
+confirm "dependent libraries" && \
+	sudo apt-get install freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
+
+echo "**********************************************"
+echo " Install CUDA and SDK"
+echo "**********************************************"
 confirm "install CUDA and SDK" && \
 	wget http://developer.download.nvidia.com/compute/cuda/4_2/rel/toolkit/cudatoolkit_4.2.9_linux_64_ubuntu11.04.run && \
 	wget http://developer.download.nvidia.com/compute/cuda/4_2/rel/sdk/gpucomputingsdk_4.2.9_linux.run && \
 	chmod 755 *.run && \
 	sudo ./cudatoolkit_4.2.9_linux_64_ubuntu11.04.run && \
 	./gpucomputingsdk_4.2.9_linux.run
+
+echo "**********************************************"
+echo " Apply patch"
+echo "**********************************************"
+confirm "patch" && \
+	(cd patch && ./patch_sdk.sh)
 
 echo "**********************************************"
 echo " Add environment settings in .bashrc"
