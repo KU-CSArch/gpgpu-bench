@@ -2,7 +2,7 @@
 # *********************************
 # Patch for CUDA SDK 4.2.9
 # - Gunjae Koo (gunjae.koo@gmail.com)
-# - Information from https://devtalk.nvidia.com/default/topic/520958/cuda-programming-and-performance/cuda-4-2-install-in-ubuntu-12-04/
+# - reference from https://devtalk.nvidia.com/default/topic/520958/cuda-programming-and-performance/cuda-4-2-install-in-ubuntu-12-04/
 # *********************************
 
 source ../common.config
@@ -24,3 +24,5 @@ echo "cp -i sdk/Makefile.imageSegmentationNPP ${CUDA_SDK_PATH}/CUDALibraries/src
 cp -i sdk/Makefile.imageSegmentationNPP ${CUDA_SDK_PATH}/CUDALibraries/src/imageSegmentationNPP/Makefile
 echo "cp -i sdk/Makefile.randomFog ${CUDA_SDK_PATH}/CUDALibraries/src/randomFog/Makefile"
 cp -i sdk/Makefile.randomFog ${CUDA_SDK_PATH}/CUDALibraries/src/randomFog/Makefile
+
+echo "---- done ----"
