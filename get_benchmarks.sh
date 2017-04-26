@@ -50,8 +50,8 @@ echo " Mars"
 echo "**********************************************"
 confirm "mars" && \
 	wget http://www.cse.ust.hk/catalac/users/wenbin/mars/Mars.zip && \
-	unzip Mars.zip && \
-	cp -r Mars/sample_apps ~/bin/NVIDIA_GPU_Computing_SDK4/C
+	unzip Mars.zip
+#	cp -r Mars/sample_apps ~/bin/NVIDIA_GPU_Computing_SDK4/C
 
 echo "**********************************************"
 echo " PolyBench"

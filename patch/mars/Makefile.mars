@@ -1,0 +1,46 @@
+# Copied and modified from Makefile.ispass-2009
+CUDA_PATH=/usr/local/cuda
+CUDA_SDK_PATH=~/workspace/cuda_sdk4
+#CUDA_SDK_PATH=~/bin/NVIDIA_GPU_Computing_SDK4
+
+BINDIR:=$(shell pwd)/bin/
+BINSUBDIR=release
+SETENV=export BINDIR=$(BINDIR); \
+	   export ROOTDIR=$(CUDA_SDK_PATH)/C/src/; \
+	   export BINSUBDIR=$(BINSUBDIR);
+noinline?=0
+
+.PHONY: check_environment
+default: check_environment common
+	$(SETENV) make noinline=$(noinline) -C sample_apps/InvertedIndex
+	$(SETENV) make noinline=$(noinline) -C sample_apps/Kmeans
+	$(SETENV) make noinline=$(noinline) -C sample_apps/MatrixMul
+	$(SETENV) make noinline=$(noinline) -C sample_apps/PageViewCount
+	$(SETENV) make noinline=$(noinline) -C sample_apps/PageViewRank
+	$(SETENV) make noinline=$(noinline) -C sample_apps/SimilarityScore
+	$(SETENV) make noinline=$(noinline) -C sample_apps/StringMatch
+	$(SETENV) make noinline=$(noinline) -C sample_apps/WordCount
+
+check_environment:
+	@echo "set correct environment settings"
+
+common:
+	rm -f common
+	ln -s $(CUDA_SDK_PATH)/C/common common
+	rm -f lib
+	ln -s $(CUDA_SDK_PATH)/C/lib lib
+	rm -f ../shared
+	ln -s $(CUDA_SDK_PATH)/shared ../shared
+
+clean:
+	make clean -C sample_apps/InvertedIndex
+	make clean -C sample_apps/Kmeans
+	make clean -C sample_apps/MatrixMul
+	make clean -C sample_apps/PageViewCount
+	make clean -C sample_apps/PageViewRank
+	make clean -C sample_apps/SimilarityScore
+	make clean -C sample_apps/StringMatch
+	make clean -C sample_apps/WordCount
+
+all: default
+cleanall: clean
