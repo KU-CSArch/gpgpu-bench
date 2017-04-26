@@ -44,6 +44,12 @@ confirm "gcc-4.4" && \
 	sudo update-alternatives --config g++
 
 echo "**********************************************"
+echo " Install nvidia driver (will work only on Ubuntu 12.04)"
+echo "**********************************************"
+confirm "nvidia drivers" && \
+	sudo apt-get install nvidia-current nvidia-304 libcudart4
+
+echo "**********************************************"
 echo " Install dependent libraries"
 echo "**********************************************"
 confirm "dependent libraries" && \
