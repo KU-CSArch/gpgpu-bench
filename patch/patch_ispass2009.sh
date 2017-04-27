@@ -58,14 +58,14 @@ echo "**********************************************"
 echo " Replace makefiles"
 echo "**********************************************"
 echo "cp -i ispass2009/Makefile.ispass-2009 ${ISPASS_PATH}/Makefile.ispass-2009"
-cp -i ispass2009/Makefile.ispass-2009 ${ISPASS_PATH}/Makefile.ispass-2009
 echo "cp -i ispass2009/Makefile.AES ${ISPASS_PATH}/AES/Makefile"
-cp -i ispass2009/Makefile.AES ${ISPASS_PATH}/AES/Makefile
 echo "cp -i ispass2009/Makefile.DG ${ISPASS_PATH}/DG/Makefile"
-cp -i ispass2009/Makefile.DG ${ISPASS_PATH}/DG/Makefile
 echo "cp -i ispass2009/Makefile.in.DG_3rdParty ${ISPASS_PATH}/DG/3rdParty/ParMetis-3.1/Makefile.in"
-cp -i ispass2009/Makefile.in.DG_3rdParty ${ISPASS_PATH}/DG/3rdParty/ParMetis-3.1/Makefile.in
 echo "cp -i ispass2009/Makefile.WP ${ISPASS_PATH}/WP/makefile"
+cp -i ispass2009/Makefile.ispass-2009 ${ISPASS_PATH}/Makefile.ispass-2009
+cp -i ispass2009/Makefile.AES ${ISPASS_PATH}/AES/Makefile
+cp -i ispass2009/Makefile.DG ${ISPASS_PATH}/DG/Makefile
+cp -i ispass2009/Makefile.in.DG_3rdParty ${ISPASS_PATH}/DG/3rdParty/ParMetis-3.1/Makefile.in
 cp -i ispass2009/Makefile.WP ${ISPASS_PATH}/WP/makefile
 
 echo "---- done ----"
