@@ -1,7 +1,6 @@
 #!/bin/bash
-
 # ***************************************
-#  Excluding benchmarks that fail compilation
+#  Excluding benchmarks that encounter compilation fails
 # ***************************************
 
 ## Ubuntu 14.04

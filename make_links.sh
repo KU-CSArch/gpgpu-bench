@@ -1,9 +1,10 @@
-#!/bin/baseh
+#!/bin/bash
 # ****************************************
 #  Script for making environment for GPU-benches
 #	Gunjae Koo (gunjae.koo@gmail.com)
 # ****************************************
-SDK_PATH="~/bin/NVIDIA_GPU_Computing_SDK4"
+SDK_PATH="~/workspace/cuda_sdk4"
+#SDK_PATH="~/bin/NVIDIA_GPU_Computing_SDK4"
 
 if [ -f common ]; then
 	ln -s ${SDK_PATH}/C/common common

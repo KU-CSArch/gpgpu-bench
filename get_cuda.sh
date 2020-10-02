@@ -7,7 +7,7 @@
 source common.config
 
 # pre-installed GCC version
-CC_OLD_VER=4.6
+CC_OLD_VER=4.8
 
 # functions
 function confirm() {
@@ -56,7 +56,7 @@ confirm "dependent libraries" && \
 	sudo apt-get install freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
 
 echo "**********************************************"
-echo " Install CUDA and SDK"
+echo " Install CUDA and SDK (SDK target directory = ~/workspace/cuda_sdk4)"
 echo "**********************************************"
 confirm "install CUDA and SDK" && \
 	wget http://developer.download.nvidia.com/compute/cuda/4_2/rel/toolkit/cudatoolkit_4.2.9_linux_64_ubuntu11.04.run && \
@@ -77,6 +77,7 @@ echo "**********************************************"
 echo "PATH=$PATH:/usr/local/cuda/bin"
 echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/lib"
 echo "export CUDA_INSTALL_PATH=/usr/local/cuda"
-echo "export NVIDIA_COMPUTE_SDK_LOCATION=~/bin/NVIDIA_GPU_Computing_SDK4"
+echo "export NVIDIA_COMPUTE_SDK_LOCATION=~/workspace/cuda_sdk4"
+#echo "export NVIDIA_COMPUTE_SDK_LOCATION=~/bin/NVIDIA_GPU_Computing_SDK4"
 
 echo "---- done ----"
