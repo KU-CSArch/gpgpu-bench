@@ -78,6 +78,6 @@ echo "**********************************************"
 echo " Graph applications"
 echo "**********************************************"
 confirm "GraphBench" && \
-	git clone https://github.com/lestrose/GraphApplications.git && \
+	git clone https://github.com/qiuminxu/GraphApplications.git && \
 	mv GraphApplications GraphBench && \
 	(cd GraphBench && rm -rf .git)
