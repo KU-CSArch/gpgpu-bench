@@ -25,4 +25,8 @@ cp -i sdk/Makefile.histEqualizationNPP ${CUDA_SDK_PATH}/CUDALibraries/src/histEq
 cp -i sdk/Makefile.imageSegmentationNPP ${CUDA_SDK_PATH}/CUDALibraries/src/imageSegmentationNPP/Makefile
 cp -i sdk/Makefile.randomFog ${CUDA_SDK_PATH}/CUDALibraries/src/randomFog/Makefile
 
+echo "cp -i sdk/cuda_sdk_fail.sh ${CUDA_SDK_PATH}/C/."
+cp -i sdk/cuda_sdk_fail.sh ${CUDA_SDK_PATH}/C/.
+(cd ${CUDA_SDK_PATH}/C && ./cuda_sdk_fail.sh)
+
 echo "---- done ----"
