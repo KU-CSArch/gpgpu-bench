@@ -47,7 +47,7 @@ echo "**********************************************"
 echo " Install nvidia driver (will work only on Ubuntu 12.04)"
 echo "**********************************************"
 confirm "nvidia drivers" && \
-	sudo apt-get install nvidia-current nvidia-304 libcudart4
+	sudo apt-get install nvidia-current nvidia-304 libcudart5.5
 
 echo "**********************************************"
 echo " Install dependent libraries"

@@ -81,3 +81,11 @@ confirm "GraphBench" && \
 	git clone https://github.com/qiuminxu/GraphApplications.git && \
 	mv GraphApplications GraphBench && \
 	(cd GraphBench && rm -rf .git)
+
+echo "**********************************************"
+echo " Tango (DNN applications)"
+echo "**********************************************"
+confirm "Tango" && \
+	git clone https://gitlab.com/Tango-DNNbench/Tango.git && \
+	(cd Tango && rm -rf .git)
+
