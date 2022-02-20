@@ -1,6 +1,7 @@
 /ispass2009
 /rodinia_2.4
 /rodinia_3.0
+/rodinia_3.1
 /.project
 /parboil
 /Mars
@@ -9,4 +10,8 @@
 /shoc
 /temp
 /GraphBench
+/Tango
+/Parboil
+*.zip
 *.run
+*.tar.bz2

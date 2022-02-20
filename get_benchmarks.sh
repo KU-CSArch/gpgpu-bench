@@ -54,6 +54,14 @@ confirm "mars" && \
 #	cp -r Mars/sample_apps ~/bin/NVIDIA_GPU_Computing_SDK4/C
 
 echo "**********************************************"
+echo " Parboil (not supported)"
+echo " - Need to download benchmarks and datasets from http://impact.crhc.illinois.edu/parboil/parboil.aspx"
+echo "**********************************************"
+#confirm "Parboil" && \
+#	git clone https://github.com/abduld/Parboil.git && \
+#	(cd Parboil && rm -rf .git)
+
+echo "**********************************************"
 echo " PolyBench"
 echo "**********************************************"
 confirm "PolyBench-AAC" && \
