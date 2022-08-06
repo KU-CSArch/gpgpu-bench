@@ -33,9 +33,13 @@ echo "**********************************************"
 echo " GPGPU-Sim bundle"
 echo "**********************************************"
 confirm "GPGPU-Sim bundle" && \
-	git clone https://github.com/gpgpu-sim/ispass2009-benchmarks.git && \
-	mv ispass2009-benchmarks ispass2009 && \
-	(cd ispass2009 && rm -rf .git)
+	wget https://github.com/gpgpu-sim/ispass2009-benchmarks/archive/refs/heads/master.zip && \
+	unzip master.zip && \
+	mv ispass2009-benchmarks-master ispass2009 && \
+	rm -f master.zip
+	#git clone https://github.com/gpgpu-sim/ispass2009-benchmarks.git && \
+	#mv ispass2009-benchmarks ispass2009 && \
+	#(cd ispass2009 && rm -rf .git)
 #	(cd ispass2009 && make -f Makefile.ispass-2009)
 
 echo "**********************************************"
