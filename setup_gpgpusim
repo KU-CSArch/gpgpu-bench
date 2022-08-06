@@ -3,7 +3,8 @@ function setup_cuda_gpusim() {
 	PATH=$PATH:/usr/local/cuda/bin
 	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/lib
 	export CUDA_INSTALL_PATH=/usr/local/cuda
-	export NVIDIA_COMPUTE_SDK_LOCATION=~/workspace/cuda_sdk4
+	export NVIDIA_COMPUTE_SDK_LOCATION=/usr/local/cuda
+#	export NVIDIA_COMPUTE_SDK_LOCATION=~/workspace/cuda_sdk4
 #	export NVIDIA_COMPUTE_SDK_LOCATION=~/bin/NVIDIA_GPU_Computing_SDK4
 }
 
