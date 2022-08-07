@@ -13,6 +13,9 @@ LIST="${LIST} ptxjit"
 LIST="${LIST} deviceQuery"
 LIST="${LIST} simpleTextureDrv"
 
+## Docker image (Ubuntu 14.04) maybe SM=20
+LIST="${LIST} segmentationTreeThrust MonteCarlo Interval simpleAtomicIntrinsics simpleVoteIntrinsics simplePrintf threadFenceReduction binomialOptions MonteCarloMultiGPU Mandelbrot quasirandomGenerator"
+
 echo "${LIST}"
 mkdir src_failed
 
