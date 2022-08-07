@@ -26,7 +26,7 @@ function confirm() {
 echo "**********************************************"
 echo " Installing CUDA libraries"
 echo "**********************************************"
-sudo apt-get install libcuda1-346 libcudart5.5
+#sudo apt-get install libcuda1-346 libcudart5.5
 
 echo "cp -i rodinia/compile_rodinia*.sh ${RODINIA_PATH}/."
 cp -i rodinia/compile_rodinia*.sh ${RODINIA_PATH}/.
